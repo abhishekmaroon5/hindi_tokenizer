@@ -37,6 +37,23 @@ ENV/
 models/*
 !models/.gitkeep
 
+# Data files
+data/*
+!data/sample_hindi.txt
+!data/.gitkeep
+*.tgz
+*.tar.gz
+*.zip
+processed_corpus.txt
+
+# Cache files
+.cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+test_results/
+
 # Jupyter Notebooks
 .ipynb_checkpoints
 
@@ -67,3 +84,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+
+# Gradio temporary files
+gradio_cached_examples/
+flagged/

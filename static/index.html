@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindi Tokenizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>हिंदी टोकनाइज़र</h1>
+            <p>Hindi Tokenizer - Subword Tokenization for Hindi Text</p>
+        </header>
+
+        <div class="model-info">
+            <div id="model-status">Loading model information...</div>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <h2>Input Text</h2>
+                <textarea id="input-text" placeholder="Enter Hindi text here..."></textarea>
+                <div class="buttons">
+                    <button id="tokenize-btn">Tokenize</button>
+                    <button id="clear-btn">Clear</button>
+                    <button id="sample-btn">Load Sample</button>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="tokens">Token IDs</button>
+                    <button class="tab-btn" data-tab="pieces">Token Pieces</button>
+                    <button class="tab-btn" data-tab="reconstructed">Reconstructed</button>
+                </div>
+                
+                <div class="tab-content active" id="tokens-content">
+                    <h2>Token IDs</h2>
+                    <div id="tokens-output" class="output-box"></div>
+                </div>
+                
+                <div class="tab-content" id="pieces-content">
+                    <h2>Token Pieces</h2>
+                    <div id="pieces-output" class="output-box"></div>
+                </div>
+                
+                <div class="tab-content" id="reconstructed-content">
+                    <h2>Reconstructed Text</h2>
+                    <div id="reconstructed-output" class="output-box"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metrics-section">
+            <h2>Tokenization Metrics</h2>
+            <div class="metrics">
+                <div class="metric-item">
+                    <span class="metric-label">Total Tokens:</span>
+                    <span id="total-tokens" class="metric-value">0</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Characters:</span>
+                    <span id="total-chars" class="metric-value">0</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Chars/Token:</span>
+                    <span id="chars-per-token" class="metric-value">0</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Processing Time:</span>
+                    <span id="processing-time" class="metric-value">0 ms</span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Hindi Tokenizer - A subword tokenization tool for Hindi language</p>
+            <p>Built with SentencePiece and FastAPI</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
